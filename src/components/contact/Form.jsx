@@ -1,15 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "sonner";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-
-const SERVICE_ID = "service_t24zy32";
-const TEMPLATE_ID = "template_54gnwvs ";
-const PUBLIC_KEY = "public_B8h6JOY0U1cObiHbS";
-
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 const container = {
   hidden: { opacity: 0 },
@@ -32,25 +30,33 @@ export default function Form() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
-  const sendEmail = (params) => {
-    const toastId = toast.loading("Sending your message, please wait...");
+  useEffect(() => {
+    if (PUBLIC_KEY) {
+      emailjs.init(PUBLIC_KEY);
+    }
+  }, []);
 
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, params, PUBLIC_KEY)
-      .then(() => {
-        toast.success("Message sent successfully!", { id: toastId });
-        reset();
-      })
-      .catch((error) => {
-        console.error("Email send failed:", error);
-        toast.error("Failed to send message. Please try again later.", { id: toastId });
-      });
+  const sendEmail = async (params) => {
+    const toastId = toast.loading("Sending your message, please wait...");
+    
+    try {
+      if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+        throw new Error("EmailJS credentials are not properly configured");
+      }
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
+      toast.success("Message sent successfully!", { id: toastId });
+      reset();
+    } catch (error) {
+      console.error("Email send failed:", error);
+      toast.error("Failed to send message. Please try again later.", { id: toastId });
+    }
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const templateParams = {
       to_name: "Vanshika",
       from_name: data.name,
@@ -58,7 +64,7 @@ export default function Form() {
       message: data.message,
     };
 
-    sendEmail(templateParams);
+    await sendEmail(templateParams);
   };
 
   return (
@@ -92,7 +98,13 @@ export default function Form() {
           variants={item}
           type="email"
           placeholder="email"
-          {...register("email", { required: "This field is required!" })}
+          {...register("email", { 
+            required: "This field is required!",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address"
+            }
+          })}
           className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
         />
         {errors.email && (
@@ -110,7 +122,7 @@ export default function Form() {
             },
             minLength: {
               value: 10,
-              message: "Message should be more than 50 characters",
+              message: "Message should be more than 10 characters",
             },
           })}
           className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
@@ -121,10 +133,11 @@ export default function Form() {
 
         <motion.input
           variants={item}
-          value="Cast your message!"
+          value={isSubmitting ? "Sending..." : "Cast your message!"}
           type="submit"
+          disabled={isSubmitting}
           className="px-10 py-4 rounded-md shadow-lg bg-background border border-accent/30 border-solid
-          hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize"
+          hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize disabled:opacity-50 disabled:cursor-not-allowed"
         />
       </motion.form>
     </>
