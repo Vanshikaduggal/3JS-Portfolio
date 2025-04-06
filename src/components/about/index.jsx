@@ -49,7 +49,7 @@ const AboutDetails = () => {
 
         <ItemLayout className="col-span-full md:col-span-6 !p-0">
           <Link
-            href="https://github.com/Vanshikaduggal"
+            href="https://github.com/Vanshikaduggal/3JS-portfolio"
             target="_blank"
             className="w-full"
           >
