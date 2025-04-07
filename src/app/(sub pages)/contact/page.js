@@ -23,7 +23,7 @@ export default function Contact() {
             Summon the Wizard
           </h1>
           <p className="text-center font-light text-sm xs:text-base">
-          Got a project in mind or just want to chat tech? Reach out — I'm always open to collaboration and new opportunities.
+          Got a project in mind or just want to chat tech? Reach out — I&apos;m always open to collaboration and new opportunities.
           </p>
         </div>
         <Form />
