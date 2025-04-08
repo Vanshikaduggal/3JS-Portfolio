@@ -115,50 +115,158 @@ export default function Home() {
         </div>
       </section>
 
+      {/* LinkedIn Section */}
+      <section className="relative z-20 max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-4xl font-bold text-white text-center mb-10">
+          LinkedIn Profile
+        </h2>
+
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl">
+          <div className="flex flex-col md:flex-row md:items-center gap-8">
+            {/* Stats Box */}
+            <div className="md:w-1/3">
+              <div className="p-6 bg-blue-100/10 border border-blue-400/30 rounded-2xl shadow-inner">
+                <h3 className="text-xl font-semibold text-blue-200 mb-2">
+                  Connections
+                </h3>
+                <p className="text-4xl font-bold text-blue-400">1000+</p>
+              </div>
+            </div>
+
+            {/* Description Box */}
+            <div className="md:w-2/3 text-white/90">
+              <h3 className="text-2xl font-semibold mb-3">
+                Professional Journey
+              </h3>
+              <p className="text-base sm:text-lg leading-relaxed mb-4">
+                I actively network and share professional updates,
+                accomplishments, and insights on LinkedIn. It’s where I connect
+                with like-minded individuals, recruiters, and industry
+                professionals while growing my digital presence.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/vanshika-duggal13/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition duration-300"
+              >
+                View My LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Certifications Section */}
-      {/* Certifications Section */}
-<section className="relative z-20 max-w-6xl mx-auto px-4 py-12 mb-20">
-  <h2 className="text-4xl font-bold text-white text-center mb-10">Certifications</h2>
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
-      <h3 className="text-xl font-semibold mb-2">Full Stack Web Development</h3>
-      <p className="text-sm text-white/70 mb-1">Issued by: Udemy</p>
-      <p className="text-sm text-white/70 mb-4">Date: January 2023</p>
-      <p className="text-base leading-relaxed">
-        Comprehensive course covering modern web technologies including React, Node.js, and MongoDB.
-      </p>
-    </div>
+      <section className="relative z-20 max-w-6xl mx-auto px-4 py-12 mb-20">
+        <h2 className="text-4xl font-bold text-white text-center mb-10">
+          Certifications
+        </h2>
 
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
-      <h3 className="text-xl font-semibold mb-2">AWS Cloud Practitioner</h3>
-      <p className="text-sm text-white/70 mb-1">Issued by: Amazon Web Services</p>
-      <p className="text-sm text-white/70 mb-4">Date: March 2023</p>
-      <p className="text-base leading-relaxed">
-        Foundational understanding of AWS Cloud services, security, architecture, pricing, and support.
-      </p>
-    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">
+              IBM Applied DevOps Engineering
+            </h3>
+            <p className="text-sm text-white/70 mb-1">Issued by: IBM</p>
+            <p className="text-sm text-white/70 mb-4">
+              Date: February 25, 2025
+            </p>
+            <p className="text-base leading-relaxed">
+              Covered DevOps tools, CI/CD, Docker, Kubernetes, and cloud-native
+              engineering practices.
+            </p>
+          </div>
 
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
-      <h3 className="text-xl font-semibold mb-2">JavaScript Algorithms and Data Structures</h3>
-      <p className="text-sm text-white/70 mb-1">Issued by: freeCodeCamp</p>
-      <p className="text-sm text-white/70 mb-4">Date: June 2022</p>
-      <p className="text-base leading-relaxed">
-        Advanced JavaScript concepts, data structures implementation, and algorithm problem solving.
-      </p>
-    </div>
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">
+              Coding Interview Preparation
+            </h3>
+            <p className="text-sm text-white/70 mb-1">Issued by: Meta</p>
+            <p className="text-sm text-white/70 mb-4">Date: March 12, 2025</p>
+            <p className="text-base leading-relaxed">
+              Mastered data structures, algorithms, and behavioral interview
+              strategies from Meta experts.
+            </p>
+          </div>
 
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
-      <h3 className="text-xl font-semibold mb-2">React Native Mobile Development</h3>
-      <p className="text-sm text-white/70 mb-1">Issued by: Coursera</p>
-      <p className="text-sm text-white/70 mb-4">Date: September 2023</p>
-      <p className="text-base leading-relaxed">
-        Building cross-platform mobile applications using React Native and JavaScript.
-      </p>
-    </div>
-  </div>
-</section>
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">
+              The Art of the Job Interview
+            </h3>
+            <p className="text-sm text-white/70 mb-1">
+              Issued by: BigInterview
+            </p>
+            <p className="text-sm text-white/70 mb-4">Date: March 12, 2025</p>
+            <p className="text-base leading-relaxed">
+              Techniques to ace job interviews, improve confidence, and craft
+              impactful answers.
+            </p>
+          </div>
 
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">
+              AI Foundations for Everyone
+            </h3>
+            <p className="text-sm text-white/70 mb-1">Issued by: IBM</p>
+            <p className="text-sm text-white/70 mb-4">Date: October 15, 2024</p>
+            <p className="text-base leading-relaxed">
+              Learned AI basics, ethics, real-world use-cases, and its impact on
+              industries.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">
+              Blockchain Revolution in Financial Services
+            </h3>
+            <p className="text-sm text-white/70 mb-1">Issued by: INSEAD</p>
+            <p className="text-sm text-white/70 mb-4">Date: February 7, 2024</p>
+            <p className="text-base leading-relaxed">
+              Insights into how blockchain is transforming the finance world
+              with decentralized tech.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">Blockchain</h3>
+            <p className="text-sm text-white/70 mb-1">
+              Issued by: University at Buffalo & SUNY
+            </p>
+            <p className="text-sm text-white/70 mb-4">Date: March 22, 2024</p>
+            <p className="text-base leading-relaxed">
+              Studied blockchain architecture, consensus mechanisms, and
+              decentralized applications in-depth.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">IBM Machine Learning</h3>
+            <p className="text-sm text-white/70 mb-1">Issued by: IBM</p>
+            <p className="text-sm text-white/70 mb-4">Date: March 7, 2024</p>
+            <p className="text-base leading-relaxed">
+              Gained knowledge on supervised/unsupervised learning, model
+              validation, and ML pipelines.
+            </p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl text-white/90">
+            <h3 className="text-xl font-semibold mb-2">
+              Leading People and Teams
+            </h3>
+            <p className="text-sm text-white/70 mb-1">
+              Issued by: University of Michigan
+            </p>
+            <p className="text-sm text-white/70 mb-4">
+              Date: September 22, 2023
+            </p>
+            <p className="text-base leading-relaxed">
+              Strategies for leadership, motivation, team building, and conflict
+              resolution.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
