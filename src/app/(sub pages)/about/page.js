@@ -14,14 +14,14 @@ export default function Home() {
         src={bg}
         priority
         sizes="100vw"
-        alt="Next.js Portfolio website's about page background image"
+        alt="Next.js Portfolio website&#39;s about page background image"
         className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
       />
       {/* Hero Section */}
       <div className="relative pb-20">
         <div className="flex flex-col items-center text-center">
           <h1 className="font-bold text-5xl xs:text-6xl sm:text-7xl text-white">
-            Hello, I'm <span className="text-yellow-200">Vanshika</span>
+            Hello, I&#39;m <span className="text-yellow-200">Vanshika</span>
           </h1>
           <p className="font-light text-gray-200 text-lg mt-4 max-w-2xl">
             As a Full Stack Developer, I create complete web solutions — from
@@ -38,19 +38,19 @@ export default function Home() {
 
           <div className="custom-bg p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8 col-span-full w-full max-w-7xl">
             <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-4 text-center">
-              I'm a passionate Full Stack Developer with expertise in modern web
+              I&#39;m a passionate Full Stack Developer with expertise in modern web
               technologies. My journey in software development began with a
               curiosity about how things work on the web, and has evolved into a
               career building impactful applications.
               <br />
               <br />
               I focus on creating clean, efficient, and user-friendly solutions
-              that solve real-world problems. Whether it's frontend development
+              that solve real-world problems. Whether it&#39;s frontend development
               with React and Next.js or backend work with Node.js and databases,
               I enjoy the full spectrum of web development.
               <br />
               <br />
-              When I'm not coding, you might find me exploring new technologies,
+              When I&#39;m not coding, you might find me exploring new technologies,
               contributing to open-source projects, or sharing knowledge with
               the developer community.
             </p>
