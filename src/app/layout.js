@@ -17,7 +17,7 @@ export const metadata = {
       "Vanshika's Portfolio",
   },
   description:
-    "A unique creative portfolio designed by CodeBucks with cutting-edge technologies like Next.js, Tailwind CSS, Three.js, and Framer Motion. Experience the art of modern web development firsthand.",
+   "Discover a digital canvas where design meets interactivity. Powered by Next.js, Tailwind CSS, Three.js, and Framer Motion — this portfolio isn't just built, it's engineered to impress. Dive into a seamless blend of performance, creativity, and motion.",
 };
 
 export default function RootLayout({ children }) {
